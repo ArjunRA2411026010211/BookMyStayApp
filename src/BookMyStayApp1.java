@@ -10,5 +10,8 @@ public class BookMyStayApp1 {
 
         System.out.println("Welcome to Book My Stay App!");
 
+        int totalRooms = 5;
+        System.out.println("Total Rooms Available: " + totalRooms);
+
     }
 }
