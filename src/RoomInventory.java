@@ -3,24 +3,16 @@ import java.util.Map;
 
 public class RoomInventory {
 
-    private Map<String, Integer> roomAvailability;
+    private Map<String, Integer> rooms;
 
     public RoomInventory() {
-        roomAvailability = new HashMap<>();
-        initializeInventory();
+        rooms = new HashMap<>();
+        rooms.put("Single", 2);
+        rooms.put("Double", 2);
+        rooms.put("Suite", 1);
     }
 
-    private void initializeInventory() {
-        roomAvailability.put("Single Room", 5);
-        roomAvailability.put("Double Room", 3);
-        roomAvailability.put("Suite Room", 2);
-    }
-
-    public Map<String, Integer> getRoomAvailability() {
-        return roomAvailability;
-    }
-
-    public void updateAvailability(String roomType, int count) {
-        roomAvailability.put(roomType, count);
+    public boolean isRoomAvailable(String roomType) {
+        return rooms.containsKey(roomType) && rooms.get(roomType) > 0;
     }
 }
