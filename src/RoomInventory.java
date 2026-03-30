@@ -15,4 +15,15 @@ public class RoomInventory {
     public boolean isRoomAvailable(String roomType) {
         return rooms.containsKey(roomType) && rooms.get(roomType) > 0;
     }
+
+    // UC10 method
+    public void incrementRoom(String roomType) {
+        if (rooms.containsKey(roomType)) {
+            rooms.put(roomType, rooms.get(roomType) + 1);
+        }
+    }
+
+    public int getAvailableRooms(String roomType) {
+        return rooms.getOrDefault(roomType, 0);
+    }
 }
